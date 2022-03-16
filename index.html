@@ -4,14 +4,91 @@
     <meta charset="UTF-8">
     <title>Document</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     
-    <div class="container">
-        <header>Header</header>
-        <main>Main</main>
-        <footer>Footer</footer>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <a href="/" class="logo">Мир красоты</a>
+
+                    <nav class="navigation">
+                        <ul>
+                            <li><a href="#services">Услуги и цены</a></li>
+                            <li><a href="#masters">Мастера</a></li>
+                            <li><a href="#portfolio">Наши работы</a></li>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="phone">
+                        <a href="tel:8 (499) 686-17-62">8 (499) 686-17-62</a>
+                        <span>с 10.00 до 19.00 без выходных</span>
+                    </div>
+                </div>
+
+                <div class="header-hero">
+                    <h1>Создай свой образ вместе с нами</h1>
+                    <p>Идеальный образ за 60 минут</p>
+                    <button class="btn">Записаться онлайн</button>
+                </div>
+
+                <ul class="social">
+                    <li><a href="#" target="_blank"><img src="" alt="Vk"></a></li>
+                    <li><a href="#" target="_blank"><img src="" alt="Instagram"></a></li>
+                    <li><a href="#" target="_blank"><img src="" alt="YouTube"></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="main">
+            <section id="about">
+                <div class="container">
+                    <h2>О салоне</h2>
+                </div>
+            </section>
+
+            <section id="services">
+                <div class="container">
+                    <h2>Популярные услуги</h2>
+                </div>
+            </section>
+
+            <section id="price">
+                <div class="container">
+                    <h2>Услуги и цены</h2>
+                </div>
+            </section>
+
+            <section id="masters">
+                <div class="container">
+                    <h2>Мастера</h2>
+                </div>
+            </section>
+
+            <section id="portfolio">
+                <div class="container">
+                    <h2>Наши работы</h2>
+                </div>
+            </section>
+
+            <section id="contacts">
+                <div class="container">
+                    <h2>Контакты</h2>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">Footer</div>
+        </footer>
     </div>
 
 </body>
