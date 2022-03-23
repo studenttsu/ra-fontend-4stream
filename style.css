@@ -10,6 +10,7 @@ body {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     color: #333;
+    min-width: 320px;
 }
 
 html, body {
@@ -32,14 +33,38 @@ a {
     height: 100%;
 }
 
+.btn {
+    border: none;
+    outline: 0;
+    background-color: #FB9475;
+    color: #fff;
+    text-align: center;
+    height: 48px;
+    width: 480px;
+}
+
 .main {
     flex: 1;
+}
+
+.header__hero {
+    margin-bottom: 150px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section_bg {
+    padding: 80px 0;
+    background: #ccc;
 }
 
 /* ------ Header ------- */
 .header {
     background: #F8F6F7 url('./images/header-bg.png');
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .header .container {
@@ -47,10 +72,17 @@ a {
     padding: 30px 0 130px;
 }
 
-.header-top {
+.header__top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 120px;
+}
+
+.header__social {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .logo {
@@ -60,24 +92,24 @@ a {
     color: #333;
 }
 
-.navigation ul {
+.navigation__list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-.navigation li:not(:last-child) {
+.navigation__item:not(:last-child) {
     margin-right: 28px;
 }
 
-.navigation a {
+.navigation__link {
     font-size: 14px;
     font-weight: 600;
     transition: .15s color;
 }
 
-.navigation a:hover {
+.navigation__link:hover {
     color: #00BF78;
 }
 
@@ -109,13 +141,35 @@ a {
 }
 
 .social {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+}
+
+.social li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social a {
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    display: block;
+    font-size: 0;
+}
+
+.social a img {
+    display: none;
+}
+
+.social_vertical {
+    flex-direction: column;
+}
+
+.social_vertical li:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .girl {
@@ -197,4 +251,43 @@ a {
 .video:hover svg path {
     stroke: yellow;
     /* transform: scale(1.1) translateX(-50%); */
+}
+
+
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) { 
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+} 
+/* Small Devices, Tablets */ 
+@media only screen and (max-width: 768px) {
+    .header__top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .phone-info {
+        text-align: center;
+    }
+
+    .logo {
+        margin: auto;
+    }
+
+    .navigation__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+} 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) { 
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
 }

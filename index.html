@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +18,16 @@
         <header class="header">
             <div class="container">
 
-                <div class="header-top">
+                <div class="header__top">
                     <a href="/" class="logo">Мир красоты</a>
 
                     <nav class="navigation">
-                        <ul>
-                            <li><a href="#">Услуги и цены</a></li>
-                            <li><a href="#">Мастера</a></li>
-                            <li><a href="#">Наши работы</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Контакты</a></li>
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a class="navigation__link" href="#">Услуги и цены</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">Мастера</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">Наши работы</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">О нас</a></li>
+                            <li class="navigation__item"><a class="navigation__link" href="#">Контакты</a></li>
                         </ul>
                     </nav>
 
@@ -35,13 +37,13 @@
                     </div>
                 </div>
 
-                <div class="hero">
-                    <h1>Создай свой образ вместе с нами</h1>
-                    <p>Идеальный образ за 60 минут</p>
-                    <button class="btn">Записаться онлайн</button>
+                <div class="hero header__hero">
+                    <h1 class="hero__title">Создай свой образ вместе с нами</h1>
+                    <p class="hero__subtitle">Идеальный образ за 60 минут</p>
+                    <button class="btn btn_large">Записаться онлайн</button>
                 </div>
 
-                <ul class="social">
+                <ul class="social social_vertical header__social">
                     <li><a href="#"><img src="#" alt="Vk"></a></li>
                     <li><a href="#"><img src="#" alt="Instagram"></a></li>
                     <li><a href="#"><img src="#" alt="Youtube"></a></li>
@@ -52,9 +54,8 @@
         </header>
 
         <main class="main">
-            <div class="container">
                 
-                <button type="button" class="video" style="background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/plumeria.jpg');">
+                <!-- <button type="button" class="video" style="background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/plumeria.jpg');">
                     <div class="video-overlay"></div>
                     <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_2_1683)">
@@ -69,11 +70,98 @@
                         </clipPath>
                         </defs>
                     </svg>                        
-                </button>
+                </button> -->
 
-            </div>
+                <section class="section">
+                    <div class="container">
+
+                        <div class="section__header">
+                            <h2 class="section__title">Title</h2>
+                            <p class="section__subtitle">Description</p>
+                        </div>
+
+                        <div class="section__inner">
+                            <div class="prices">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="container">
+
+                        <div class="section__header">
+                            <h2 class="section__title">Title</h2>
+
+                            <div class="section__actions">
+                                <button></button>
+                            </div>
+                        </div>
+
+                        <div class="section__inner">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="popular-service">
+                                        ...
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="popular-service">
+                                        ...
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="popular-service">
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="container">
+
+                        <div class="section__header">
+                            <h2 class="section__title">Title</h2>
+                            <p class="section__subtitle">Description</p>
+                        </div>
+
+                        <div class="section__inner">
+                            <div class="tabs">
+                                <div class="tabs__header"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section section_bg">
+                    <div class="container">
+
+                        <div class="section__header">
+                            <h2 class="section__title">Title</h2>
+                        </div>
+
+                        <div class="section__inner">
+                            <div class="tabs">
+                                <div class="tabs__header"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
         </main>
 
+        <!-- TODO: Разобраться с отображением футера -->
         <footer class="footer">
             <div class="container">
                 Footer
