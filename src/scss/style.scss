@@ -1,31 +1,7 @@
-html {
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-body {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    min-width: 320px;
-}
-
-html, body {
-    height: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 15px;
-}
+@import './vendors';
+@import './variables';
+@import './common';
+@import './mixins';
 
 .wrapper {
     display: flex;
@@ -47,42 +23,55 @@ a {
     flex: 1;
 }
 
-.header__hero {
-    margin-bottom: 150px;
-}
-
 .section {
     padding: 50px 0;
-}
 
-.section_bg {
-    padding: 80px 0;
-    background: #ccc;
+    &_bg {
+        padding: 80px 0;
+        background: #ccc;
+    }
 }
 
 /* ------ Header ------- */
 .header {
+    $this: &;
+
     background: #F8F6F7 url('./images/header-bg.png');
     overflow: hidden;
     flex-shrink: 0;
-}
 
-.header .container {
-    position: relative;
-    padding: 30px 0 130px;
-}
+    .container {
+        position: relative;
+        padding: 30px 0 130px;
+    }
 
-.header__top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 120px;
-}
+    &_main {
+        #{$this}__top {
+            display: none;
+        }
+    }
 
-.header__social {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
+
+        @include _768() {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__social {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__hero {
+        margin-bottom: 150px;
+    }
 }
 
 .logo {
@@ -110,7 +99,7 @@ a {
 }
 
 .navigation__link:hover {
-    color: #00BF78;
+    color: $green;
 }
 
 .phone-info {
@@ -253,41 +242,4 @@ a {
     /* transform: scale(1.1) translateX(-50%); */
 }
 
-
-/* Large Devices, Wide Screens */ 
-@media only screen and (max-width: 1280px) { 
-} 
-/* Medium Devices, Desktops */ 
-@media only screen and (max-width: 992px) { 
-} 
-/* Small Devices, Tablets */ 
-@media only screen and (max-width: 768px) {
-    .header__top {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .phone-info {
-        text-align: center;
-    }
-
-    .logo {
-        margin: auto;
-    }
-
-    .navigation__list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navigation__item:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-} 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width: 480px) { 
-} 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width: 320px) { 
-}
+@import './media';
