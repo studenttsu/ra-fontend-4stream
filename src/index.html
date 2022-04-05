@@ -11,10 +11,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        .todo-item.done {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="container">
+        <form id="todo-form">
+            <input type="text" name="task" placeholder="Enter task...">
+            <button type="submit">Add</button>
+        </form>
+
+        <header>
+            <h3>My tasks</h3>
+            <p id="empty-taks-message">List is empty</p>
+        </header>
+
+        <ul id="todo-list">
+        </ul>
+
+        <br>
+
+        <button onclick="printActiveTasks()">Print active tasks</button>
+    </div>
     
-    <div class="wrapper">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="wrapper" style="display: none;">
+        <div class="container">
+            <h1>Заголовок</h1>
+        </div>
+
         <header class="header">
             <div class="container">
 
@@ -168,6 +214,9 @@
             </div>
         </footer>
     </div>
+
+    <!-- <script src="./js/main.js" type="module"></script> -->
+    <script src="./js/todo.js"></script>
 
 </body>
 </html>
