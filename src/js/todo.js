@@ -2,6 +2,36 @@ const todoForm = document.getElementById('todo-form');
 const emptyMessageEl = document.getElementById('empty-taks-message');
 const todoListEl = document.getElementById('todo-list');
 
+async function fetchTodos(todoItemId = '') {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoItemId}`);
+    return response.json();
+}
+
+async function createTodo(title) {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+        method: 'POST',
+        body: JSON.stringify({ title })
+    });
+
+    return response.json();
+}
+
+async function initTodoApp() {
+    const todos = await fetchTodos();
+
+    // todos.splice(0, 10);
+
+    todos
+        .filter((todos, index) => index <= 10)
+        .forEach(todo => {
+            const el = createTodoElement(todo.title);
+            todoListEl.append(el);
+        });
+    // наполнение ui данными
+}
+
+initTodoApp();
+
 // Получать только активные таски
 function getActiveTasks() {
     return Array
@@ -38,14 +68,17 @@ todoListEl.addEventListener('click', event => {
     }
 });
 
-todoForm.addEventListener('submit', (event) => {
+todoForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const { task, checkItem } = event.target.elements;
     const value = task.value;
 
     if (value) {
-        const todoElement = createTodoElement(value.trim());
+        const { id } = await createTodo(value);
+        const createdTodoItem = await fetchTodos(id);
+
+        const todoElement = createTodoElement(createdTodoItem.title);
         todoListEl.appendChild(todoElement);
     
         todoForm.reset();
@@ -68,11 +101,3 @@ function createTodoElement(task) {
 
     return el;
 }
-
-
-// const divEl = document.createElement('div');
-
-// divEl.addEventListener('click', clickHandler);
-// divEl.removeEventListener('click', clickHandler);
-
-// function clickHandler() {}

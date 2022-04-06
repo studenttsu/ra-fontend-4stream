@@ -1,126 +1,105 @@
-import { User } from './user.js';
+// import { User } from './user.js';
 
-let name = 'Ivan';
-name = 'Oksana';
+// ----------------------
 
-const isAdmin = 'true';
+// function getAccount(callback) {
+//     setTimeout(() => {
+//         const user = {
+//             id: 1,
+//             name: 'User'
+//         };
 
-// Примитивы - строки, числа, boolean
-// Объекты - Объекты, Массивы, Прототипы
-// null 
-// undefined
-
-const Types = {
-    Stringg: 'String',
-    StringList: 'StringList',
-    // ...
-}
-
-const _type = Types.StringList;
-
-// switch (_type) {
-// 	case Types.Stringg:
-// 		console.log('Строковый тип');
-// 		break;
-
-// 	case Types.StringList:
-// 		console.log('Списочный тип строк');
-// 		break;
-
-//     case Types.StringList:
-//     console.log('Списочный тип строк');
-// 		break;
-
-//     case Types.StringList:
-// 		console.log('Списочный тип строк');
-// 		break;
-
-//     case Types.StringList:
-// 		console.log('Списочный тип строк');
-// 		break;
-
-// 	default: console.log('Без значения');
+//         callback(user);
+//     }, 3000);
 // }
 
-// console.log(typeof {});
+// function getPosts(userId, callback) {
+//     setTimeout(() => {
+//         const posts = [
+//             {
+//                 id: 1,
+//                 name: 'Post 1'
+//             },
+//             {
+//                 id: 2,
+//                 name: 'Post 2'
+//             }
+//         ];
 
-/**
- * Todo
- */
-function todoSmth(callback) {
-    if (callback) {
-        callback();
-    } else {
-        throw new Error('Тип параметра не функция');
-    }
-}
-
-// try {
-//     todoSmth();
-// } catch (error) {
-//     console.error(error);
-// } finally {
-//     console.log('Выведи сообщение')
+//         callback(posts);
+//     }, 3000);
 // }
 
 
-const user = {
-    id: 1,
-    firstName: 'Ivan',
-    lastName: 'Ivanov',
-    patronymic: 'Ivanovich',
-    age: 18,
-    gender: 'male',
-    // options: {
-    //     isAdmin: true
-    // },
-    getFullName() {
-        return `${this.lastName} ${this.firstName} ${this.patronymic}`;
+// getAccount(user => {
+//     console.log(user);
+
+//     getPosts(user.id, posts => {
+//         console.log(posts);
+//     });
+// });
+
+const wait = (timeout = 1000) => new Promise(r => setTimeout(() => r(), timeout));
+
+async function getAccount() {
+    await wait();
+
+    return {
+        id: 1,
+        name: 'User'
+    };
+}
+
+async function getPosts(userId) {
+    if (!userId) {
+        throw new Error('Id is required');
     }
-};
 
-function printUser(user) {
-    const { firstName, lastName, patronymic } = user;
+    await wait();
 
-    // console.log(firstName);
-    // console.log(lastName);
-    // console.log(patronymic);
+    return [
+        {
+            id: 1,
+            name: 'Post 1'
+        },
+        {
+            id: 2,
+            name: 'Post 2'
+        }
+    ];
 }
 
-const array = ['qqq', 'www'];
-array[0]; //qqq
-array[1];// www
-array.length
-array[array.length - 1];
+async function getPostById(postId) {
+    if (!postId) {
+        throw new Error('Id is required');
+    }
 
+    await wait();
 
-printUser(user);
-
-const numbers = [1, 2, 3, 4, 5];
-
-for (let i = 0; i <= numbers.length; i++) {
-	// тело цикла
-	console.log(`Индекс: ${i}`);
-	console.log(`Значение: ${numbers[i]}`);
+    return {
+        id: postId,
+        name: `Post ${postId}`
+    };
 }
 
-for (let item of numbers) {
-	console.log(`Значение: ${item}`);
+function loader(isLoad) {
+    console.log(isLoad ? 'Loading...' : 'Finish');
 }
 
-for (let key in user) {
-	console.log(`Ключ: ${key}`);
-	console.log(`Значение: ${user[key]}`)
+async function init() {
+    loader(true);
+
+    try {
+        const user = await getAccount();
+        const shortPostsInfo = await getPosts(user.id);
+        const posts = await Promise.all(shortPostsInfo.map(item => getPostById(item.id)));
+    
+        console.log(posts);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        loader(false);
+    }
 }
 
-let count = 0;
-
-while (count <= 5) {
-	// Выводим в консоль значение переменной count
-	console.log(count);
-
-	// Увеличиваем значение переменной на 1;
-	count++;
-}
-
-'sad'.toLowerCase();
+init();

@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -106,12 +109,38 @@
 
                         <div class="section__header">
                             <h2 class="section__title">Title</h2>
-                            <p class="section__subtitle">Description</p>
+
+                            <div class="section__actions">
+                                <button class="slider-prev">Prev</button>
+                                <button class="slider-next">Next</button>
+                            </div>
                         </div>
 
                         <div class="section__inner">
-                            <div class="prices">
+                            <div class="slider">
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
 
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
+
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
+
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
+
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
+
+                                <div class="slider__item">
+                                    <a data-fancybox="gallery" href="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg"><img src="http://cdn.simplesite.com/i/5d/d3/285697106584654685/i285697114415799389._szw1280h1280_.jpg" alt=""></a>
+                                </div>
                             </div>
                         </div>
 
@@ -198,8 +227,21 @@
         </footer>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <!-- <script src="./js/main.js" type="module"></script> -->
     <script src="./js/todo.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.slider').slick({
+                slidesToShow: 4,
+                prevArrow: '.slider-prev',
+                nextArrow: '.slider-next'
+            });
+        });
+    </script>
 
 </body>
 </html>
