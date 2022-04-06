@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -18,6 +22,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -37,7 +42,7 @@
         <br>
 
         <button onclick="printActiveTasks()">Print active tasks</button>
-    </div> 
+    </div>
 
     <div class="wrapper">
         <div class="container">
@@ -83,8 +88,8 @@
         </header>
 
         <main class="main">
-                
-                <!-- <button type="button" class="video" style="background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/plumeria.jpg');">
+
+            <!-- <button type="button" class="video" style="background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/plumeria.jpg');">
                     <div class="video-overlay"></div>
                     <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_2_1683)">
@@ -101,91 +106,129 @@
                     </svg>                        
                 </button> -->
 
-                <section class="section">
-                    <div class="container">
+            <section class="section">
+                <div class="container">
 
-                        <div class="section__header">
-                            <h2 class="section__title">Title</h2>
-                            <p class="section__subtitle">Description</p>
-                        </div>
-
-                        <div class="section__inner">
-                            <div class="prices">
-
-                            </div>
-                        </div>
-
+                    <div class="section__header">
+                        <h2 class="section__title">Title</h2>
+                        <p class="section__subtitle">Description</p>
                     </div>
-                </section>
 
-                <section class="section">
-                    <div class="container">
+                    <div class="section__inner">
+                        <button class="btn-prev">Prev</button>
+        <button class="btn-next">Next</button>
+        <br><br>
 
-                        <div class="section__header">
-                            <h2 class="section__title">Title</h2>
+        <div class="slider">
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a data-fancybox="slider" href="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg">
+                    <img src="https://howtogetrid.ru/assets/uploads/2018/09/pitanie-dymchatogo-leoparda.jpg" alt="">
+                </a>
+            </div>
+        </div>
+                    </div>
 
-                            <div class="section__actions">
-                                <button></button>
-                            </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+
+                    <div class="section__header">
+                        <h2 class="section__title">Title</h2>
+
+                        <div class="section__actions">
+                            <button></button>
                         </div>
+                    </div>
 
-                        <div class="section__inner">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="popular-service">
-                                        ...
-                                    </div>
+                    <div class="section__inner">
+                        <div class="row">
+                            <div class="col">
+                                <div class="popular-service">
+                                    ...
                                 </div>
+                            </div>
 
-                                <div class="col">
-                                    <div class="popular-service">
-                                        ...
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="popular-service">
-                                        ...
-                                    </div>
+                            <div class="col">
+                                <div class="popular-service">
+                                    ...
                                 </div>
                             </div>
-                        </div>
 
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="container">
-
-                        <div class="section__header">
-                            <h2 class="section__title">Title</h2>
-                            <p class="section__subtitle">Description</p>
-                        </div>
-
-                        <div class="section__inner">
-                            <div class="tabs">
-                                <div class="tabs__header"></div>
+                            <div class="col">
+                                <div class="popular-service">
+                                    ...
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                </section>
 
-                <section class="section section_bg">
-                    <div class="container">
+                </div>
+            </section>
 
-                        <div class="section__header">
-                            <h2 class="section__title">Title</h2>
-                        </div>
+            <section class="section">
+                <div class="container">
 
-                        <div class="section__inner">
-                            <div class="tabs">
-                                <div class="tabs__header"></div>
-                            </div>
-                        </div>
-
+                    <div class="section__header">
+                        <h2 class="section__title">Title</h2>
+                        <p class="section__subtitle">Description</p>
                     </div>
-                </section>
+
+                    <div class="section__inner">
+                        <div class="tabs">
+                            <div class="tabs__header"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section section_bg">
+                <div class="container">
+
+                    <div class="section__header">
+                        <h2 class="section__title">Title</h2>
+                    </div>
+
+                    <div class="section__inner">
+                        <div class="tabs">
+                            <div class="tabs__header"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
 
         </main>
@@ -198,8 +241,25 @@
         </footer>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- <script src="./js/main.js" type="module"></script> -->
     <script src="./js/todo.js"></script>
 
+    <script>
+        $(document).ready(init);
+
+        function init() {
+            $('.slider').slick({
+                prevArrow: '.btn-prev',
+                nextArrow: '.btn-next',
+                slidesToShow: 2,
+                infinite: false,
+            });
+        }
+    </script>
+
 </body>
+
 </html>
