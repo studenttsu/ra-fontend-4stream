@@ -6,6 +6,8 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
+const webpackStream = require('webpack-stream');
+const rename = require('gulp-rename');
 
 function buildSass() {
     return src('src/scss/**/*.scss')
@@ -40,6 +42,15 @@ function copy() {
         .pipe(browserSync.stream());;
 }
 
+function buildJs() {
+    return src('src/js/index.js')
+      .pipe(webpackStream(require('./webpack.config')))
+      .pipe(rename('main.min.js'))
+      .pipe(dest('src/js'))
+      .pipe(dest('dist/js'))
+      .pipe(browserSync.stream());
+  }
+
 // Таск очистки dist
 function cleanDist() {
     return del('dist');
@@ -47,6 +58,7 @@ function cleanDist() {
 
 // Таск отслеживания изменения файлов
 function serve() {
+    watch(['src/js/**/*.js', '!src/js/**/*.min.js'], buildJs);
     watch('src/scss/**/*.scss', buildSass);
     watch('src/**/*.html', buildHtml);
 }
@@ -59,5 +71,5 @@ function createDevServer() {
     });
 }
 
-exports.build = series(cleanDist, buildSass, buildHtml, copy);
-exports.default = series(buildSass, parallel(createDevServer, serve));
+exports.build = series(cleanDist, buildSass, buildHtml, buildJs, copy);
+exports.default = series([buildSass, buildJs], parallel(createDevServer, serve));

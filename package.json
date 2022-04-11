@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
+    "start": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
@@ -21,15 +21,23 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.1.5",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "postcss": "^8.4.12",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "webpack": "^5.72.0",
+    "webpack-stream": "^7.0.0"
   }
 }
