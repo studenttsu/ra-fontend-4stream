@@ -9,43 +9,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
-
-    <style>
-        .todo-item.done {
-            text-decoration: line-through;
-        }
-    </style>
 </head>
 <body>
 
-    <div class="container">
-        <form id="todo-form">
-            <input type="text" name="task" placeholder="Enter task...">
-            <button type="submit">Add</button>
-        </form>
-
-        <header>
-            <h3>My tasks</h3>
-            <p id="empty-taks-message">List is empty</p>
-        </header>
-
-        <ul id="todo-list">
-        </ul>
-
-        <br>
-
-        <button onclick="printActiveTasks()">Print active tasks</button>
-    </div> 
-
     <div class="wrapper">
-        <div class="container">
-            <h1>Заголовок</h1>
-        </div>
+        <section class="section">
+            <div class="container">
+
+                <div class="section__header">
+                    <h2 class="section__title">Контакты</h2>
+                </div>
+
+                <div class="section__inner">
+                    <form id="order-form">
+                        <div class="form-control">
+                            <label>Ваше имя:</label>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Номер телефона:</label>
+                            <input type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Выберите мастера:</label>
+
+                            <select name="masterId">
+                                <option value="">Не выбран</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Выберите услугу:</label>
+
+                            <select name="serviceId">
+                                <option value="">Не выбран</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Дата визита:</label>
+                            <input type="date" name="visitDate">
+                        </div>
+
+                        <button>Записаться</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
 
         <header class="header">
             <div class="container">
@@ -228,20 +244,9 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <!-- <script src="./js/main.js" type="module"></script> -->
-    <script src="./js/todo.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('.slider').slick({
-                slidesToShow: 4,
-                prevArrow: '.slider-prev',
-                nextArrow: '.slider-next'
-            });
-        });
-    </script>
+    <script src="./main.min.js"></script>
 
 </body>
 </html>
