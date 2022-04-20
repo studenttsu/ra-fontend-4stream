@@ -1,15 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import mastersApi from "../../../api/masters-api";
-
-function useInput(defaultValue = null) {
-    const [value, setValue] = useState(defaultValue);
-
-    function onChange(event) {
-        setValue(event.target.value);
-    }
-
-    return { value, onChange, setValue };
-}
+import { useInput } from '../../../hooks';
 
 export function MasterForm({ master }) {
     const surName = useInput('');
