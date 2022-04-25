@@ -5,7 +5,7 @@ function init() {
     $('.slider').slick({
         slidesToShow: 4,
         prevArrow: '.slider-prev',
-        nextArrow: '.slider-next'
+        nextArrow: '.slider-next',
     });
 
     new OrderForm();

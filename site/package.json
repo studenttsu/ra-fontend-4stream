@@ -9,12 +9,13 @@
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
     "stylelint": "stylelint src/**/*.scss",
-    "stylelint:fix": "stylelint src/**/*.scss --fix"
+    "stylelint:fix": "stylelint src/**/*.scss --fix",
+    "prettier": "prettier --write src/js/**/*.js"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run eslint && npm run stylelint",
-      "pre-push": "npm run eslint:fix && npm run stylelint:fix"
+      "pre-push": "npm run eslint:fix && npm run stylelint:fix && npm run prettier"
     }
   },
   "repository": {
