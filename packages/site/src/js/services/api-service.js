@@ -1,4 +1,4 @@
-import { API_PATH } from '../constants';
+import { API_PATH } from '@beauty/common/constants';
 import { HttpService } from './http-service';
 
 class ApiService extends HttpService {

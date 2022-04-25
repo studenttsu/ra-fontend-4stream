@@ -14,5 +14,6 @@
     "rules": {
         "no-async-promise-executor": "off",
         "react/prop-types": "off"
+        // "indent": ["error", 4, {"SwitchCase": 1}]
     }
 }

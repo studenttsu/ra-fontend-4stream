@@ -1,4 +1,4 @@
-import { API_PATH } from '../constants';
+import { API_PATH } from '@beauty/common/constants';
 import TokenService from '../services/token-service';
 import pubsubService from './pubsub-service';
 

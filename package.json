@@ -1,0 +1,20 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "kill-port": "^1.6.1",
+    "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "kill-port 3000 && lerna run start --stream",
+    "start:site": "lerna run start --scope=site --stream",
+    "start:crm": "kill-port 3000 && lerna run start --scope=crm --stream",
+    "build:site": "lerna run build --scope=site",
+    "build:crm": "lerna run build --scope=crm"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
