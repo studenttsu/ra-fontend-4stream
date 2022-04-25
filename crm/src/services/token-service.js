@@ -1,3 +1,4 @@
+import jwtDecode from 'jwt-decode';
 const TOKEN_KEY = 'jwtToken';
 
 class TokenService {
@@ -14,8 +15,13 @@ class TokenService {
     }
   
     isTokenValid() {
+      const tokenValid = (token = {}) => {
+        const now = Date.now() / 1000;
+        return token.exp > now;
+      };
+  
       const token = this.getToken();
-      return token !== undefined && token !== null;
+      return token ? tokenValid(jwtDecode(token)) : false;
     }
 }
 

@@ -2,7 +2,9 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -13,7 +15,8 @@ body {
     min-width: 320px;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 

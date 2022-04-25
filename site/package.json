@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp build"
+    "build": "cross-env NODE_ENV=production gulp build",
+    "eslint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "stylelint": "stylelint src/**/*.scss",
+    "stylelint:fix": "stylelint src/**/*.scss --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint && npm run stylelint",
+      "pre-push": "npm run eslint:fix && npm run stylelint:fix"
+    }
   },
   "repository": {
     "type": "git",
@@ -31,13 +41,19 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.5",
     "del": "^6.0.0",
+    "eslint": "^8.14.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "husky": "^7.0.4",
     "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
     "sass": "^1.49.9",
+    "stylelint": "^14.7.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-scss": "^4.2.0",
     "webpack": "^5.72.0",
     "webpack-stream": "^7.0.0"
   }
