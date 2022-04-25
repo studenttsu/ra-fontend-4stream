@@ -12,7 +12,7 @@ export default function App() {
   const { isAuth, logout } = useAuth();
 
   useEffect(() => {
-    CustomersApi.getCustomers().then(list => console.log(list));  
+    CustomersApi.getCustomers().then(console.log);  
   }, []);
 
   return (
