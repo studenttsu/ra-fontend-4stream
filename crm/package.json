@@ -24,6 +24,12 @@
     "stylelint": "stylelint src/**/*.scss",
     "stylelint:fix": "stylelint src/**/*.scss --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint && npm run stylelint",
+      "pre-push": "npm run eslint:fix && npm run stylelint:fix"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -45,6 +51,7 @@
   "devDependencies": {
     "eslint": "^8.14.0",
     "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4",
     "stylelint": "^14.7.1",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-scss": "^4.2.0"
