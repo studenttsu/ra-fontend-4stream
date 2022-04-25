@@ -1,7 +1,10 @@
+import { CreateOrderDto, OrderDto } from '../../common/interfaces';
 import { API_PATH } from '../constants';
 import { HttpService } from './http-service';
 
 class ApiService extends HttpService {
+    readonly apiPath: string;
+
     constructor() {
         super(API_PATH);
     }
@@ -9,16 +12,23 @@ class ApiService extends HttpService {
     /**
      * Возвращает список сотрудников
      */
-    getMasters() {
+     public getMasters() {
         return this.get('staff');
     }
 
-    getServices() {
+    public getServices() {
         return this.get('services');
     }
 
-    createOrder(orderData) {
+    /**
+     * Создает новую запись
+     */
+    public createOrder(orderData: CreateOrderDto): Promise<OrderDto> {
         return this.post('orders', orderData);
+    }
+
+    private _modify(): void {
+        console.log('modify');
     }
 }
 

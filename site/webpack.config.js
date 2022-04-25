@@ -8,6 +8,10 @@ module.exports = {
             {
                 test: /\.(js)$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.(ts)$/,
+                loader: 'ts-loader'
             }
         ]
     },
